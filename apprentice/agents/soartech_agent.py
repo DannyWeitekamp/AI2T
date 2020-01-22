@@ -33,7 +33,16 @@ class SoarTechAgent(BaseAgent):
         action_penalty: float = -0.05,
         negative_actions: bool = False,
         skill_map: Dict[str, Skill] = fraction_skill_set,
-            prior_skills=None,
+        prior_skills: Collection[str] = frozenset([
+            #     'equal',
+            #     'add',
+            #     'multiply'
+            # ]),
+            'click_done', 'check',
+            # 'equal',
+            'update_answer',
+            'update_convert', 'add',
+            'multiply']),
         **kwargs
     ):
         # Just track the state as a set of Facts?
@@ -273,7 +282,8 @@ class SoarTechAgent(BaseAgent):
                 # print('firing', best_activation.get_rule_name())
                 state = self.working_memory.state
 
-                output = self.working_memory.activation_factory.to_ex_activation(
+                output = self.working_memory.activation_factory\
+                    .to_ex_activation(
                     best_activation
                 ).fire(self.working_memory.ke)
                 tabu.add(
@@ -282,7 +292,7 @@ class SoarTechAgent(BaseAgent):
                         frozenset(best_activation.get_rule_bindings().items()),
                     )
                 )
-                print(tabu)
+                # print(tabu)
                 print("TABU LENGTH", len(tabu))
                 # pprint(self.working_memory.facts)
 
@@ -290,13 +300,11 @@ class SoarTechAgent(BaseAgent):
                     break
 
                 candidate_activations = [
-                    activation
-                    for activation in self.working_memory.activations
-                    if (
-                        activation.get_rule_name(),
-                        frozenset(activation.get_rule_bindings().items()),
-                    )
-                    not in tabu
+                    activation for activation in
+                    self.working_memory.activations
+                    if (activation.get_rule_name(),
+                        frozenset(activation.get_rule_bindings().items())) not
+                       in tabu
                 ]
 
                 print("LENGTH OF ACTIVATIONS", len(candidate_activations))
@@ -323,13 +331,11 @@ class SoarTechAgent(BaseAgent):
                 print("failed!")
                 # print()
                 candidate_activations = [
-                    activation
-                    for activation in self.working_memory.activations
-                    if (
-                        activation.get_rule_name(),
-                        frozenset(activation.get_rule_bindings().items()),
-                    )
-                    not in tabu
+                    activation for activation in
+                    self.working_memory.activations
+                    if (activation.get_rule_name(),
+                        frozenset(activation.get_rule_bindings().items())) not
+                       in tabu
                 ]
 
                 # if the reward is positive, then we assume any other action is
