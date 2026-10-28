@@ -1,8 +1,5 @@
 colorama==0.4.3
 concept-formation==0.3.4
-Django>=4.2.9
-django-extensions>=3.2.3
-django-picklefield @ git+https://github.com/eharpste/django-picklefield.git
 munkres==1.0.12
 numpy>=1.16.0
 ordered-set==3.0.2
@@ -20,7 +17,6 @@ pytest
 multiprocess
 scikit-learn
 dill
-django-cors-headers
 numba==0.58.1
 cre
 stand @ git+https://github.com/DannyWeitekamp/STAND.git

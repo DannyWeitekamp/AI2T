@@ -1,7 +1,7 @@
-from apprentice.agents import SoarTechAgent
-from apprentice.working_memory import ExpertaWorkingMemory
-from apprentice.working_memory.representation import Sai
-# from apprentice.learners.when_learners import q_learner
+from ai2t.agents import SoarTechAgent
+from ai2t.working_memory import ExpertaWorkingMemory
+from ai2t.working_memory.representation import Sai
+# from ai2t.learners.when_learners import q_learner
 from ttt_simple import ttt_engine, ttt_oracle
 
 

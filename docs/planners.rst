@@ -4,7 +4,7 @@ Planners
 Base Planner
 ------------
 
-.. automodule:: apprentice.planners.base_planner
+.. automodule:: ai2t.planners.base_planner
    :members:
    :undoc-members:
    :show-inheritance:
@@ -12,7 +12,7 @@ Base Planner
 Numbert Planner
 ---------------
 
-.. automodule:: apprentice.planners.NumbaPlanner
+.. automodule:: ai2t.planners.NumbaPlanner
    :members:
    :undoc-members:
    :show-inheritance:
@@ -20,7 +20,7 @@ Numbert Planner
 FO Planner
 ----------
 
-.. automodule:: apprentice.planners.fo_planner
+.. automodule:: ai2t.planners.fo_planner
    :members:
    :undoc-members:
    :show-inheritance:
@@ -28,7 +28,7 @@ FO Planner
 VectorizedPlanner
 -----------------
 
-.. automodule:: apprentice.planners.VectorizedPlanner
+.. automodule:: ai2t.planners.VectorizedPlanner
    :members:
    :undoc-members:
    :show-inheritance:
@@ -36,7 +36,7 @@ VectorizedPlanner
 Action Planner
 --------------
 
-.. automodule:: apprentice.planners.action_planner
+.. automodule:: ai2t.planners.action_planner
    :members:
    :undoc-members:
    :show-inheritance:
@@ -44,7 +44,7 @@ Action Planner
 Rulesets
 ----------
 
-.. automodule:: apprentice.planners.rulesets
+.. automodule:: ai2t.planners.rulesets
    :members:
    :undoc-members:
    :show-inheritance:

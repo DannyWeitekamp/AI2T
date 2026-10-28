@@ -1,7 +1,7 @@
 from experta import KnowledgeEngine
 
-from apprentice.agents import SoarTechAgent
-from apprentice.working_memory import ExpertaWorkingMemory
+from ai2t.agents import SoarTechAgent
+from ai2t.working_memory import ExpertaWorkingMemory
 from ttt_simple import ttt_oracle
 
 from examples.ttt_simple import ttt_skill_map

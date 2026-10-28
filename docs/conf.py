@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.abspath('../'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'Apprentice'
+project = 'AI2T'
 copyright = '2019, Chris MacLellan, Erik Harpstead, and Daniel Weitekamp'
 author = 'Chris MacLellan, Erik Harpstead, and Daniel Weitekamp'
 
@@ -103,7 +103,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'ApprenticePythondoc'
+htmlhelp_basename = 'AI2Tdoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -130,7 +130,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'ApprenticePython.tex', 'Apprentice Python Documentation',
+    (master_doc, 'AI2T.tex', 'AI2T Documentation',
      'Chris MacLellan \\and Erik Harpstead \\and Daniel Weitekamp', 'manual'),
 ]
 
@@ -140,7 +140,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'testgitlabcipython', 'Apprentice Python Documentation',
+    (master_doc, 'testgitlabcipython', 'AI2T Documentation',
      [author], 1)
 ]
 
@@ -151,8 +151,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'ApprenticePython', 'Apprentice Python Documentation',
-     author, 'ApprenticePython', 'An architecture for building agents that '
+    (master_doc, 'AI2T', 'AI2T Documentation',
+     author, 'AI2T', 'An architecture for building agents that '
      'learn from demonstrations and feedback.',
      'Miscellaneous'),
 ]

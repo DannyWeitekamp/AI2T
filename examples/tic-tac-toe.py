@@ -2,10 +2,10 @@ from pprint import pprint
 from tabulate import tabulate
 import argparse
 
-from apprentice.planners.fo_planner import Operator
-from apprentice.agents.RLAgent import RLAgent
-from apprentice.agents.ModularAgent import ModularAgent
-from apprentice.agents.Memo import Memo
+from ai2t.planners.fo_planner import Operator
+from ai2t.agents.RLAgent import RLAgent
+from ai2t.agents.ModularAgent import ModularAgent
+from ai2t.agents.Memo import Memo
 
 from experta import Fact
 from experta import KnowledgeEngine
@@ -15,8 +15,8 @@ from experta import AS
 from experta import TEST
 from experta import Rule
 # from experta import DefFacts
-# from apprentice.working_memory.representation import Fact
-# from apprentice.working_memory.representation import Skill
+# from ai2t.working_memory.representation import Fact
+# from ai2t.working_memory.representation import Skill
 
 
 class TTT_Engine(KnowledgeEngine):
@@ -338,7 +338,7 @@ def train_agent(agent_class):
 if __name__ == "__main__":
     play_game_manually()
     parser = argparse.ArgumentParser(description='An interactive training demo'
-                                     'for apprentice agents.')
+                                     'for AI2T agents.')
     parser.add_argument('-agent', choices=['Modular', 'RLAgent', 'Memo'],
                         default='Modular', help='The agent type to use')
 

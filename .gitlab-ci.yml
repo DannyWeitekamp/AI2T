@@ -11,7 +11,6 @@ stages:
   - lint
   - test
   - document
-  - deploy
 
 flake8:
   stage: lint
@@ -19,7 +18,7 @@ flake8:
   script:
     - pip install flake8 flake8-junit-report
     - retval=0
-    - flake8 --output-file flake8.txt apprentice/ || retval=$?
+    - flake8 --output-file flake8.txt ai2t/ || retval=$?
     - flake8_junit flake8.txt flake8_junit.xml
     - cat flake8.txt
     - exit "$retval"
@@ -37,7 +36,7 @@ coverage:
     - pip install -r requirements.txt --exists-action w
     - pip install -r test-requirements.txt
     - retval=0
-    - coverage run --source apprentice -m pytest || retval=$?
+    - coverage run --source ai2t -m pytest || retval=$?
     - coverage html -d coverage
     - coverage report
     - exit "$retval"
@@ -81,67 +80,3 @@ sphinx:
     - base
   only:
     - master
-
-publish:
-  stage: deploy
-  dependencies:
-    - sphinx
-  script:
-    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
-    - eval $(ssh-agent -s)
-    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
-    - mkdir -p ~/.ssh
-    - chmod 700 ~/.ssh
-    - git config user.email "chris.maclellan@soartech.com"
-    - git config user.name "Chris MacLellan (automated triskele)"
-    - git remote rm public
-    - git remote add public git@github.com:apprenticelearner/AL_Core.git
-    - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-    - git push public HEAD:soartech-dev
-  tags:
-    - base
-  only:
-    - master
-
-pages:
-  stage: deploy
-  dependencies:
-    - sphinx
-    - coverage
-  script:
-    - mv sphinx public/
-    - mv coverage public/coverage
-  environment:
-    name: pages
-    url: https://hq-git.soartech.com/apprentice/apprentice
-  artifacts:
-    paths:
-      - public
-  tags:
-    - base
-  only:
-    - master
-    
-dockerize:
-  stage: deploy
-  script:
-    - docker build -t hq-git.soartech.com:4567/apprentice/apprentice .
-    - docker push hq-git.soartech.com:4567/apprentice/apprentice
-  tags:
-    - shell
-  only:
-    - master
-
-
-# pypi:
-#   stage: deploy
-#   dependencies:
-#     - pytest
-#   script:
-#     - pip install twine
-#     - python setup.py sdist bdist_wheel
-#     - twine upload --repository-url https://nexus.soartech.com:8443/nexus/repository/pypi-internal/ dist/*
-#   tags:
-#     - base
-#   only:
-#     - master

@@ -1,7 +1,7 @@
 import schema
 
-from apprentice.working_memory.adapters.experta_.factory import ExpertaSkillFactory
-from apprentice.working_memory.representation.representation import Sai, Skill
+from ai2t.working_memory.adapters.experta_.factory import ExpertaSkillFactory
+from ai2t.working_memory.representation.representation import Sai, Skill
 from experta import Fact, Field, KnowledgeEngine, AS, Rule, MATCH, NOT
 from tabulate import tabulate
 

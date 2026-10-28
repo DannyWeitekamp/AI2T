@@ -4,12 +4,12 @@ Agents
 Base Agents
 ---------
 
-.. automodule:: apprentice.agents.base
+.. automodule:: ai2t.agents.base
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: apprentice.agents.diff_base
+.. automodule:: ai2t.agents.diff_base
    :members:
    :undoc-members:
    :show-inheritance:
@@ -18,7 +18,7 @@ Base Agents
 ExpertaAgent
 -------------
 
-.. automodule:: apprentice.agents.experta_agent
+.. automodule:: ai2t.agents.experta_agent
    :members:
    :undoc-members:
    :show-inheritance:
@@ -26,7 +26,7 @@ ExpertaAgent
 ModularAgent
 ------------
 
-.. automodule:: apprentice.agents.ModularAgent
+.. automodule:: ai2t.agents.ModularAgent
    :members:
    :undoc-members:
    :show-inheritance:
@@ -34,22 +34,22 @@ ModularAgent
 Other Agents
 -------
 
-.. automodule:: apprentice.agents.RLAgent
+.. automodule:: ai2t.agents.RLAgent
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: apprentice.agents.WhereWhenHowNoFoa
+.. automodule:: ai2t.agents.WhereWhenHowNoFoa
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: apprentice.agents.Memo
+.. automodule:: ai2t.agents.Memo
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: apprentice.agents.Stub
+.. automodule:: ai2t.agents.Stub
    :members:
    :undoc-members:
    :show-inheritance:

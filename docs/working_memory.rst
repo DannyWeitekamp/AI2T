@@ -4,7 +4,7 @@ Working Memory
 Base
 -----
 
-.. automodule:: apprentice.working_memory.base
+.. automodule:: ai2t.working_memory.base
    :members:
    :undoc-members:
    :show-inheritance:
@@ -12,7 +12,7 @@ Base
 Representation
 --------------
 
-.. automodule:: apprentice.working_memory.representation
+.. automodule:: ai2t.working_memory.representation
    :members:
    :undoc-members:
    :show-inheritance:
